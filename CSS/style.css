@@ -34,15 +34,18 @@ body {
   color: #fff;
   transition: 0.5s;
 }
-.dashBoard {
+header {
+  padding: 2em 1em;
   width: 90%;
   margin-left: 5%;
-  padding: 2em;
-}
-header {
   display: flex;
   justify-content: space-between;
   align-items: center;
+}
+main {
+  width: 90%;
+  margin-left: 5%;
+  padding: 0 1em;
 }
 h1 {
   font-size: clamp(1.3em, 2vw, 2em);
