@@ -1,0 +1,236 @@
+* {
+  padding: 0%;
+  margin: 0%;
+  box-sizing: border-box;
+}
+:root {
+  --lg: hsl(163, 72%, 41%);
+  --br: hsl(356, 69%, 56%);
+  --y: hsl(348, 97%, 39%);
+  --f: hsl(208, 92%, 53%);
+  --t: hsl(203, 89%, 53%);
+  --ins: linear-gradient(to right, hsl(37, 97%, 70%), hsl(329, 70%, 58%));
+  --tog: linear-gradient(to right, hsl(210, 78%, 56%),hsl(146, 68%, 55%));
+  --BG: hsl(230, 17%, 14%);
+  --TBG: hsl(232, 19%, 15%);
+  --cardBG: hsl(228, 28%, 20%);
+  --txt: hsl(228, 34%, 66%);
+  /* Bright */
+  --togb: hsl(230, 22%, 74%);
+  --card-bri: hsl(227, 47%, 96%);
+  --txt-b: hsl(228, 12%, 44%);
+  --vdb: hsl(230, 17%, 14%);
+}
+.icon {
+  width: 1.5em;
+  height: 1.5em;
+}
+body {
+  font-size: 14px;
+  font-family: 'Inter', sans-serif;
+  height: 100vh;
+  background-image: linear-gradient(to bottom, var(--TBG) 20%, var(--BG) 20%);
+  color: #fff;
+  transition: 0.5s;
+}
+.dashBoard {
+  width: 90%;
+  margin-left: 5%;
+  padding: 2em;
+}
+header {
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+}
+h1 {
+  font-size: clamp(1.3em, 2vw, 2em);
+}
+header div:first-child p {
+  color: var(--txt);
+}
+header div:last-child {
+  display: flex;
+  gap: 2em;
+  justify-content: space-between;
+  align-items: center;
+}
+.toggle {
+  display: inline-block;
+  width: 3em;
+  height: 1.5em;
+  background-image: var(--tog);
+  border-radius: 1em;
+  position: relative;
+  cursor: pointer;
+  transition: 0.5s;
+}
+.toggle .bullet {
+  position: absolute;
+  left: 0.25em;
+  top: 0.25em;
+  width: 1em;
+  height: 1em;
+  border-radius: 50%;
+  background-color: var(--BG);
+  transition: 0.5s;
+}
+/* Done */
+
+.card {
+  transition: 0.5s;
+  cursor: pointer;
+}
+.card:hover {
+  background-color: #333A56;
+}
+section {
+  margin-top: 2em;
+  display: grid;
+  grid-template-columns: repeat(auto-fit, minmax(17em, 1fr));
+  gap: 2em;
+}
+section:first-of-type > div {
+  background-color: var(--cardBG);
+  padding: 2em 1em;
+  border-radius: 0.3em;
+  border-top: 0.3em solid var(--f);
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  text-align: center;
+  gap: 1em;
+  position: relative;
+}
+section:first-of-type > div:nth-child(2) {
+  border-color: var(--t);
+}
+section:first-of-type > div:nth-child(3) {
+  border: none;
+}
+section:first-of-type > div:nth-child(3)::before {
+  content: '';
+  width: 100%;
+  height: 0.3em;
+  background: var(--ins);
+  position: absolute;
+  top: 0%;
+  left: 0%;
+  border-top-left-radius: 0.3em;
+  border-top-right-radius: 0.3em;
+}
+section:first-of-type > div:nth-child(4) {
+  border-color: var(--y);
+}
+section:first-of-type .icon {
+  transform: translateY(25%);
+}
+section:first-of-type h2 {
+  font-size: clamp(1em, 5vw, 4em);
+}
+section:first-of-type h2 + p {
+  text-transform: uppercase;
+  color: var(--txt);
+  letter-spacing: 3px;
+}
+.statis {
+  display: inline-block;
+  position: relative;
+  font-weight: 700;
+}
+.statis::before {
+  content: '';
+  width: 0.5em;
+  height: 0.5em;
+  background: url(../images/icon-up.svg) no-repeat center;
+  position: absolute;
+  top: 50%;
+  left: 0%;
+  transform: translate(-150%, -50%);
+}
+.up {
+  color: var(--lg);
+}
+.down {
+  color: var(--y);
+}
+.down::before {
+  background: url(../images/icon-down.svg) no-repeat center;
+}
+/* Done */
+
+.over {
+  margin-top: 2em;
+}
+/* Done */
+
+section:last-of-type > div {
+  display: flex;
+  flex-wrap: wrap;
+  align-items: center;
+  justify-content: center;
+  row-gap: 2em;
+  background-color: var(--cardBG);
+  padding: 2em;
+  border-radius: 0.3em;
+}
+section:last-of-type > div * {
+  flex: 1 50%;
+}
+section:last-of-type h3 {
+  font-size: 2em;
+  font-weight: 700;
+}
+section:last-of-type > div span:last-of-type {
+  flex: 1;
+}
+
+
+/* Events */
+body.light {
+  background-image: linear-gradient(#fff, #fff);
+  color: var(--txt-b);
+}
+body.light h1 {
+  color: var(--vdb);
+}
+.card.light {
+  background-color: var(--card-bri);
+}
+.card.light:hover {
+  background-color: #E1E3F0;
+}
+.card.light h2,
+.card.light h3 {
+  color: var(--vdb);
+}
+
+.toggle.light {
+  background-color: var(--togb);
+  background-image: none;
+}
+.toggle.light:hover {
+  background-image: var(--tog);
+}
+.toggle.light .bullet {
+  background-color: #fff;
+  left: calc(100% - 1.25em);
+}
+
+
+
+/* Media Query */
+@media (max-width:700px) {
+  header {
+    flex-direction: column;
+    align-items: flex-start;
+  }
+  header div:first-child {
+    padding-bottom: 1em;
+  }
+  header div:last-child {
+    width: 100%;
+    padding-top: 1em;
+    border-top: 1px solid var(--txt);
+  }
+}
