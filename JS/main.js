@@ -9,10 +9,10 @@ let current = localStorage.getItem('mode');
 
 
 // Derive upon localStroage
-if (current == 'dark') {
-  dark();
-}else {
+if (current == 'light') {
   light();
+}else {
+  dark();
 }
 
 
